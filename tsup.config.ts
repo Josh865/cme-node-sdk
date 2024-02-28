@@ -1,11 +1,9 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src"],
+  entry: ["src/**/*.{ts,tsx}"],
   dts: true,
-  bundle: true,
-  treeshake: true,
-  target: "node18",
+  bundle: false,
   clean: true,
   format: ["esm", "cjs"],
 });
