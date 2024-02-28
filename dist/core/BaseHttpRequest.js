@@ -1,7 +1,2 @@
-class BaseHttpRequest {
-  constructor(config) {
-    this.config = config;
-  }
-}
-
-export { BaseHttpRequest };
+export { BaseHttpRequest } from '../chunk-S6FHWBEZ.js';
+import '../chunk-37E2YH5C.js';

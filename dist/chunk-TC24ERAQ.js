@@ -1,5 +1,3 @@
-'use strict';
-
 // src/models/GlobalRole.ts
 var GlobalRole = /* @__PURE__ */ ((GlobalRole2) => {
   GlobalRole2["SUPER_ADMIN"] = "SuperAdmin";
@@ -7,4 +5,4 @@ var GlobalRole = /* @__PURE__ */ ((GlobalRole2) => {
   return GlobalRole2;
 })(GlobalRole || {});
 
-exports.GlobalRole = GlobalRole;
+export { GlobalRole };

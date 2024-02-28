@@ -1,59 +1,13 @@
-'use strict';
-
-var url = require('url');
-var http = require('http');
-var https = require('https');
-var util = require('util');
-var zlib = require('zlib');
-var stream3 = require('stream');
-var EventEmitter = require('events');
-
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
-
-var url__default = /*#__PURE__*/_interopDefault(url);
-var http__default = /*#__PURE__*/_interopDefault(http);
-var https__default = /*#__PURE__*/_interopDefault(https);
-var util__default = /*#__PURE__*/_interopDefault(util);
-var zlib__default = /*#__PURE__*/_interopDefault(zlib);
-var stream3__default = /*#__PURE__*/_interopDefault(stream3);
-var EventEmitter__default = /*#__PURE__*/_interopDefault(EventEmitter);
-
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
-  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
-}) : x)(function(x) {
-  if (typeof require !== "undefined")
-    return require.apply(this, arguments);
-  throw Error('Dynamic require of "' + x + '" is not supported');
-});
-var __commonJS = (cb, mod) => function __require2() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
-var __export = (target, all3) => {
-  for (var name in all3)
-    __defProp(target, name, { get: all3[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
+import { ApiError } from './chunk-RSROGAV5.js';
+import { CancelablePromise } from './chunk-ZCUG5S2D.js';
+import { __commonJS, __require, __toESM, __export } from './chunk-37E2YH5C.js';
+import url from 'url';
+import http from 'http';
+import https from 'https';
+import util, { TextEncoder } from 'util';
+import zlib from 'zlib';
+import stream3, { Readable } from 'stream';
+import EventEmitter from 'events';
 
 // node_modules/delayed-stream/lib/delayed_stream.js
 var require_delayed_stream = __commonJS({
@@ -10683,13 +10637,6 @@ var require_follow_redirects = __commonJS({
   }
 });
 
-// src/core/BaseHttpRequest.ts
-var BaseHttpRequest = class {
-  constructor(config) {
-    this.config = config;
-  }
-};
-
 // node_modules/axios/lib/helpers/bind.js
 function bind(fn, thisArg) {
   return function wrap() {
@@ -11376,7 +11323,7 @@ var transitional_default = {
   forcedJSONParsing: true,
   clarifyTimeoutError: false
 };
-var URLSearchParams_default = url__default.default.URLSearchParams;
+var URLSearchParams_default = url.URLSearchParams;
 
 // node_modules/axios/lib/platform/node/index.js
 var node_default = {
@@ -12015,7 +11962,7 @@ var speedometer_default = speedometer;
 
 // node_modules/axios/lib/helpers/AxiosTransformStream.js
 var kInternals = Symbol("internals");
-var AxiosTransformStream = class extends stream3__default.default.Transform {
+var AxiosTransformStream = class extends stream3.Transform {
   constructor(options) {
     options = utils_default.toFlatObject(options, {
       maxRate: 0,
@@ -12180,7 +12127,7 @@ var readBlob_default = readBlob;
 
 // node_modules/axios/lib/helpers/formDataToStream.js
 var BOUNDARY_ALPHABET = utils_default.ALPHABET.ALPHA_DIGIT + "-_";
-var textEncoder = new util.TextEncoder();
+var textEncoder = new TextEncoder();
 var CRLF = "\r\n";
 var CRLF_BYTES = textEncoder.encode(CRLF);
 var CRLF_BYTES_COUNT = 2;
@@ -12247,7 +12194,7 @@ var formDataToStream = (form, headersHandler, options) => {
     computedHeaders["Content-Length"] = contentLength;
   }
   headersHandler && headersHandler(computedHeaders);
-  return stream3.Readable.from(async function* () {
+  return Readable.from(async function* () {
     for (const part of parts) {
       yield boundaryBytes;
       yield* part.encode();
@@ -12256,7 +12203,7 @@ var formDataToStream = (form, headersHandler, options) => {
   }());
 };
 var formDataToStream_default = formDataToStream;
-var ZlibHeaderTransformStream = class extends stream3__default.default.Transform {
+var ZlibHeaderTransformStream = class extends stream3.Transform {
   __transform(chunk, encoding, callback) {
     this.push(chunk);
     callback();
@@ -12293,14 +12240,14 @@ var callbackify_default = callbackify;
 
 // node_modules/axios/lib/adapters/http.js
 var zlibOptions = {
-  flush: zlib__default.default.constants.Z_SYNC_FLUSH,
-  finishFlush: zlib__default.default.constants.Z_SYNC_FLUSH
+  flush: zlib.constants.Z_SYNC_FLUSH,
+  finishFlush: zlib.constants.Z_SYNC_FLUSH
 };
 var brotliOptions = {
-  flush: zlib__default.default.constants.BROTLI_OPERATION_FLUSH,
-  finishFlush: zlib__default.default.constants.BROTLI_OPERATION_FLUSH
+  flush: zlib.constants.BROTLI_OPERATION_FLUSH,
+  finishFlush: zlib.constants.BROTLI_OPERATION_FLUSH
 };
-var isBrotliSupported = utils_default.isFunction(zlib__default.default.createBrotliDecompress);
+var isBrotliSupported = utils_default.isFunction(zlib.createBrotliDecompress);
 var { http: httpFollow, https: httpsFollow } = import_follow_redirects.default;
 var isHttps = /https:?/;
 var supportedProtocols = platform_default.protocols.map((protocol) => {
@@ -12399,7 +12346,7 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
         });
       };
     }
-    const emitter = new EventEmitter__default.default();
+    const emitter = new EventEmitter();
     const onFinished = () => {
       if (config.cancelToken) {
         config.cancelToken.unsubscribe(abort);
@@ -12452,7 +12399,7 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
           convertedData = utils_default.stripBOM(convertedData);
         }
       } else if (responseType === "stream") {
-        convertedData = stream3__default.default.Readable.from(convertedData);
+        convertedData = stream3.Readable.from(convertedData);
       }
       return settle(resolve2, reject, {
         data: convertedData,
@@ -12488,7 +12435,7 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
       headers.set(data.getHeaders());
       if (!headers.hasContentLength()) {
         try {
-          const knownLength = await util__default.default.promisify(data.getLength).call(data);
+          const knownLength = await util.promisify(data.getLength).call(data);
           Number.isFinite(knownLength) && knownLength >= 0 && headers.setContentLength(knownLength);
         } catch (e) {
         }
@@ -12496,7 +12443,7 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
     } else if (utils_default.isBlob(data)) {
       data.size && headers.setContentType(data.type || "application/octet-stream");
       headers.setContentLength(data.size || 0);
-      data = stream3__default.default.Readable.from(readBlob_default(data));
+      data = stream3.Readable.from(readBlob_default(data));
     } else if (data && !utils_default.isStream(data)) {
       if (Buffer.isBuffer(data)) ; else if (utils_default.isArrayBuffer(data)) {
         data = Buffer.from(new Uint8Array(data));
@@ -12527,9 +12474,9 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
     }
     if (data && (onUploadProgress || maxUploadRate)) {
       if (!utils_default.isStream(data)) {
-        data = stream3__default.default.Readable.from(data, { objectMode: false });
+        data = stream3.Readable.from(data, { objectMode: false });
       }
-      data = stream3__default.default.pipeline([data, new AxiosTransformStream_default({
+      data = stream3.pipeline([data, new AxiosTransformStream_default({
         length: contentLength,
         maxRate: utils_default.toFiniteNumber(maxUploadRate)
       })], utils_default.noop);
@@ -12595,7 +12542,7 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
     if (config.transport) {
       transport = config.transport;
     } else if (config.maxRedirects === 0) {
-      transport = isHttpsRequest ? https__default.default : http__default.default;
+      transport = isHttpsRequest ? https : http;
     } else {
       if (config.maxRedirects) {
         options.maxRedirects = config.maxRedirects;
@@ -12641,23 +12588,23 @@ var http_default = isHttpAdapterSupported && function httpAdapter(config) {
           case "x-gzip":
           case "compress":
           case "x-compress":
-            streams.push(zlib__default.default.createUnzip(zlibOptions));
+            streams.push(zlib.createUnzip(zlibOptions));
             delete res.headers["content-encoding"];
             break;
           case "deflate":
             streams.push(new ZlibHeaderTransformStream_default());
-            streams.push(zlib__default.default.createUnzip(zlibOptions));
+            streams.push(zlib.createUnzip(zlibOptions));
             delete res.headers["content-encoding"];
             break;
           case "br":
             if (isBrotliSupported) {
-              streams.push(zlib__default.default.createBrotliDecompress(brotliOptions));
+              streams.push(zlib.createBrotliDecompress(brotliOptions));
               delete res.headers["content-encoding"];
             }
         }
       }
-      responseStream = streams.length > 1 ? stream3__default.default.pipeline(streams, utils_default.noop) : streams[0];
-      const offListeners = stream3__default.default.finished(responseStream, () => {
+      responseStream = streams.length > 1 ? stream3.pipeline(streams, utils_default.noop) : streams[0];
+      const offListeners = stream3.finished(responseStream, () => {
         offListeners();
         onFinished();
       });
@@ -13637,122 +13584,6 @@ var axios_default = axios;
 
 // src/core/request.ts
 var import_form_data2 = __toESM(require_form_data(), 1);
-
-// src/core/ApiError.ts
-var ApiError = class extends Error {
-  url;
-  status;
-  statusText;
-  body;
-  request;
-  constructor(request2, response, message) {
-    super(message);
-    this.name = "ApiError";
-    this.url = response.url;
-    this.status = response.status;
-    this.statusText = response.statusText;
-    this.body = response.body;
-    this.request = request2;
-  }
-};
-
-// src/core/CancelablePromise.ts
-var CancelError = class extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "CancelError";
-  }
-  get isCancelled() {
-    return true;
-  }
-};
-var CancelablePromise = class {
-  #isResolved;
-  #isRejected;
-  #isCancelled;
-  #cancelHandlers;
-  #promise;
-  #resolve;
-  #reject;
-  constructor(executor) {
-    this.#isResolved = false;
-    this.#isRejected = false;
-    this.#isCancelled = false;
-    this.#cancelHandlers = [];
-    this.#promise = new Promise((resolve2, reject) => {
-      this.#resolve = resolve2;
-      this.#reject = reject;
-      const onResolve = (value) => {
-        if (this.#isResolved || this.#isRejected || this.#isCancelled) {
-          return;
-        }
-        this.#isResolved = true;
-        if (this.#resolve)
-          this.#resolve(value);
-      };
-      const onReject = (reason) => {
-        if (this.#isResolved || this.#isRejected || this.#isCancelled) {
-          return;
-        }
-        this.#isRejected = true;
-        if (this.#reject)
-          this.#reject(reason);
-      };
-      const onCancel = (cancelHandler) => {
-        if (this.#isResolved || this.#isRejected || this.#isCancelled) {
-          return;
-        }
-        this.#cancelHandlers.push(cancelHandler);
-      };
-      Object.defineProperty(onCancel, "isResolved", {
-        get: () => this.#isResolved
-      });
-      Object.defineProperty(onCancel, "isRejected", {
-        get: () => this.#isRejected
-      });
-      Object.defineProperty(onCancel, "isCancelled", {
-        get: () => this.#isCancelled
-      });
-      return executor(onResolve, onReject, onCancel);
-    });
-  }
-  get [Symbol.toStringTag]() {
-    return "Cancellable Promise";
-  }
-  then(onFulfilled, onRejected) {
-    return this.#promise.then(onFulfilled, onRejected);
-  }
-  catch(onRejected) {
-    return this.#promise.catch(onRejected);
-  }
-  finally(onFinally) {
-    return this.#promise.finally(onFinally);
-  }
-  cancel() {
-    if (this.#isResolved || this.#isRejected || this.#isCancelled) {
-      return;
-    }
-    this.#isCancelled = true;
-    if (this.#cancelHandlers.length) {
-      try {
-        for (const cancelHandler of this.#cancelHandlers) {
-          cancelHandler();
-        }
-      } catch (error) {
-        console.warn("Cancellation threw an error", error);
-        return;
-      }
-    }
-    this.#cancelHandlers.length = 0;
-    if (this.#reject)
-      this.#reject(new CancelError("Request aborted"));
-  }
-  get isCancelled() {
-    return this.#isCancelled;
-  }
-};
-
-// src/core/request.ts
 var isDefined = (value) => {
   return value !== void 0 && value !== null;
 };
@@ -13984,22 +13815,6 @@ var request = (config, options, axiosClient = axios_default) => {
     }
   });
 };
-
-// src/core/AxiosHttpRequest.ts
-var AxiosHttpRequest = class extends BaseHttpRequest {
-  constructor(config) {
-    super(config);
-  }
-  /**
-   * Request method
-   * @param options The request options from the service
-   * @returns CancelablePromise<T>
-   * @throws ApiError
-   */
-  request(options) {
-    return request(this.config, options);
-  }
-};
 /*! Bundled license information:
 
 mime-db/index.js:
@@ -14019,4 +13834,4 @@ mime-types/index.js:
    *)
 */
 
-exports.AxiosHttpRequest = AxiosHttpRequest;
+export { base64, catchErrorCodes, getFormData, getHeaders, getQueryString, getRequestBody, getResponseBody, getResponseHeader, isBlob2 as isBlob, isDefined, isFormData2 as isFormData, isString2 as isString, isStringWithValue, isSuccess, request, resolve, sendRequest };

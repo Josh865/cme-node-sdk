@@ -1,6 +1,7 @@
 'use strict';
 
-class ApiKeysService {
+// src/services/ApiKeysService.ts
+var ApiKeysService = class {
   constructor(httpRequest) {
     this.httpRequest = httpRequest;
   }
@@ -47,6 +48,6 @@ class ApiKeysService {
       }
     });
   }
-}
+};
 
 exports.ApiKeysService = ApiKeysService;

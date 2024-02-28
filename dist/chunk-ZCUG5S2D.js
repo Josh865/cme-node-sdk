@@ -1,5 +1,3 @@
-'use strict';
-
 // src/core/CancelablePromise.ts
 var CancelError = class extends Error {
   constructor(message) {
@@ -96,5 +94,4 @@ var CancelablePromise = class {
   }
 };
 
-exports.CancelError = CancelError;
-exports.CancelablePromise = CancelablePromise;
+export { CancelError, CancelablePromise };

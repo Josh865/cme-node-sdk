@@ -1,5 +1,3 @@
-'use strict';
-
 // src/core/ApiError.ts
 var ApiError = class extends Error {
   url;
@@ -18,4 +16,4 @@ var ApiError = class extends Error {
   }
 };
 
-exports.ApiError = ApiError;
+export { ApiError };

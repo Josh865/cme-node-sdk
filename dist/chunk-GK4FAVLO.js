@@ -1,5 +1,3 @@
-'use strict';
-
 // src/models/MembershipRole.ts
 var MembershipRole = /* @__PURE__ */ ((MembershipRole2) => {
   MembershipRole2["OWNER"] = "Owner";
@@ -8,4 +6,4 @@ var MembershipRole = /* @__PURE__ */ ((MembershipRole2) => {
   return MembershipRole2;
 })(MembershipRole || {});
 
-exports.MembershipRole = MembershipRole;
+export { MembershipRole };

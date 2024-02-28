@@ -1,6 +1,7 @@
 'use strict';
 
-class CreditTypesService {
+// src/services/CreditTypesService.ts
+var CreditTypesService = class {
   constructor(httpRequest) {
     this.httpRequest = httpRequest;
   }
@@ -50,6 +51,6 @@ class CreditTypesService {
       }
     });
   }
-}
+};
 
 exports.CreditTypesService = CreditTypesService;

@@ -1,5 +1,3 @@
-'use strict';
-
 // src/core/OpenAPI.ts
 var OpenAPI = {
   BASE: "http://localhost:5000",
@@ -13,4 +11,4 @@ var OpenAPI = {
   ENCODE_PATH: void 0
 };
 
-exports.OpenAPI = OpenAPI;
+export { OpenAPI };

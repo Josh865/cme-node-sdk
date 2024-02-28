@@ -1,5 +1,3 @@
-'use strict';
-
 // src/services/SessionService.ts
 var SessionService = class {
   constructor(httpRequest) {
@@ -20,4 +18,4 @@ var SessionService = class {
   }
 };
 
-exports.SessionService = SessionService;
+export { SessionService };

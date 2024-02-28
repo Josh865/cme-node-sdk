@@ -1,5 +1,3 @@
-'use strict';
-
 // src/models/AccreditationLevel.ts
 var AccreditationLevel = /* @__PURE__ */ ((AccreditationLevel2) => {
   AccreditationLevel2["PROVISIONAL"] = "Provisional";
@@ -8,4 +6,4 @@ var AccreditationLevel = /* @__PURE__ */ ((AccreditationLevel2) => {
   return AccreditationLevel2;
 })(AccreditationLevel || {});
 
-exports.AccreditationLevel = AccreditationLevel;
+export { AccreditationLevel };

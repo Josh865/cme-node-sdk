@@ -1,5 +1,3 @@
-'use strict';
-
 // src/services/AttendanceService.ts
 var AttendanceService = class {
   constructor(httpRequest) {
@@ -23,4 +21,4 @@ var AttendanceService = class {
   }
 };
 
-exports.AttendanceService = AttendanceService;
+export { AttendanceService };

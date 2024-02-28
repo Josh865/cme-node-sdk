@@ -1,5 +1,3 @@
-'use strict';
-
 // src/services/AccmeAccreditationService.ts
 var AccmeAccreditationService = class {
   constructor(httpRequest) {
@@ -182,4 +180,4 @@ var AccmeAccreditationService = class {
   }
 };
 
-exports.AccmeAccreditationService = AccmeAccreditationService;
+export { AccmeAccreditationService };

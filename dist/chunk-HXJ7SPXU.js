@@ -1,5 +1,3 @@
-'use strict';
-
 // src/services/ActivitiesService.ts
 var ActivitiesService = class {
   constructor(httpRequest) {
@@ -90,4 +88,4 @@ var ActivitiesService = class {
   }
 };
 
-exports.ActivitiesService = ActivitiesService;
+export { ActivitiesService };

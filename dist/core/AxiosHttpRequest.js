@@ -1,19 +1,6 @@
-import { BaseHttpRequest } from './BaseHttpRequest';
-import { request } from './request';
-
-class AxiosHttpRequest extends BaseHttpRequest {
-  constructor(config) {
-    super(config);
-  }
-  /**
-   * Request method
-   * @param options The request options from the service
-   * @returns CancelablePromise<T>
-   * @throws ApiError
-   */
-  request(options) {
-    return request(this.config, options);
-  }
-}
-
-export { AxiosHttpRequest };
+export { AxiosHttpRequest } from '../chunk-S7DC3SFS.js';
+import '../chunk-KNUP3VQV.js';
+import '../chunk-RSROGAV5.js';
+import '../chunk-S6FHWBEZ.js';
+import '../chunk-ZCUG5S2D.js';
+import '../chunk-37E2YH5C.js';

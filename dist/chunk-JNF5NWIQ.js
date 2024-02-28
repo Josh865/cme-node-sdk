@@ -1,18 +1,16 @@
-'use strict';
-
-// src/services/OrganizationsService.ts
-var OrganizationsService = class {
+// src/services/CreditTypesService.ts
+var CreditTypesService = class {
   constructor(httpRequest) {
     this.httpRequest = httpRequest;
   }
   /**
-   * @returns ListOrganizationsReponse Success
+   * @returns ListCreditTypesResponse Success
    * @throws ApiError
    */
-  listOrganizations() {
+  listCreditTypes() {
     return this.httpRequest.request({
       method: "GET",
-      url: "/organizations/",
+      url: "/credit-types/",
       errors: {
         401: `Unauthorized`
       }
@@ -20,13 +18,13 @@ var OrganizationsService = class {
   }
   /**
    * @param requestBody
-   * @returns OrganizationDto Success
+   * @returns CreditTypeDto Success
    * @throws ApiError
    */
-  createOrganization(requestBody) {
+  createCreditType(requestBody) {
     return this.httpRequest.request({
       method: "POST",
-      url: "/organizations/",
+      url: "/credit-types/",
       body: requestBody,
       mediaType: "application/json",
       errors: {
@@ -36,13 +34,13 @@ var OrganizationsService = class {
   }
   /**
    * @param id
-   * @returns OrganizationDto Success
+   * @returns CreditTypeDto Success
    * @throws ApiError
    */
-  getOrganization(id) {
+  getCreditType(id) {
     return this.httpRequest.request({
       method: "GET",
-      url: "/organizations/{id}",
+      url: "/credit-types/{id}",
       path: {
         "id": id
       },
@@ -53,4 +51,4 @@ var OrganizationsService = class {
   }
 };
 
-exports.OrganizationsService = OrganizationsService;
+export { CreditTypesService };

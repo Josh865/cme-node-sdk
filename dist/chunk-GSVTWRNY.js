@@ -1,5 +1,3 @@
-'use strict';
-
 // src/models/ProgramSize.ts
 var ProgramSize = /* @__PURE__ */ ((ProgramSize2) => {
   ProgramSize2["SMALL"] = "Small";
@@ -9,4 +7,4 @@ var ProgramSize = /* @__PURE__ */ ((ProgramSize2) => {
   return ProgramSize2;
 })(ProgramSize || {});
 
-exports.ProgramSize = ProgramSize;
+export { ProgramSize };

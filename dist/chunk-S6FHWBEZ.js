@@ -1,5 +1,3 @@
-'use strict';
-
 // src/core/BaseHttpRequest.ts
 var BaseHttpRequest = class {
   constructor(config) {
@@ -7,4 +5,4 @@ var BaseHttpRequest = class {
   }
 };
 
-exports.BaseHttpRequest = BaseHttpRequest;
+export { BaseHttpRequest };

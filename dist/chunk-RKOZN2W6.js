@@ -1,34 +1,29 @@
-'use strict';
-
-// src/services/OrganizationsService.ts
-var OrganizationsService = class {
+// src/services/ApiKeysService.ts
+var ApiKeysService = class {
   constructor(httpRequest) {
     this.httpRequest = httpRequest;
   }
   /**
-   * @returns ListOrganizationsReponse Success
+   * @returns ListApiKeysResponse Success
    * @throws ApiError
    */
-  listOrganizations() {
+  listApiKeys() {
     return this.httpRequest.request({
       method: "GET",
-      url: "/organizations/",
+      url: "/api-keys",
       errors: {
         401: `Unauthorized`
       }
     });
   }
   /**
-   * @param requestBody
-   * @returns OrganizationDto Success
+   * @returns CreateApiKeyResponse Success
    * @throws ApiError
    */
-  createOrganization(requestBody) {
+  createApiKey() {
     return this.httpRequest.request({
       method: "POST",
-      url: "/organizations/",
-      body: requestBody,
-      mediaType: "application/json",
+      url: "/api-keys",
       errors: {
         401: `Unauthorized`
       }
@@ -36,13 +31,13 @@ var OrganizationsService = class {
   }
   /**
    * @param id
-   * @returns OrganizationDto Success
+   * @returns any Success
    * @throws ApiError
    */
-  getOrganization(id) {
+  deleteApiKey(id) {
     return this.httpRequest.request({
-      method: "GET",
-      url: "/organizations/{id}",
+      method: "DELETE",
+      url: "/api-keys/{id}",
       path: {
         "id": id
       },
@@ -53,4 +48,4 @@ var OrganizationsService = class {
   }
 };
 
-exports.OrganizationsService = OrganizationsService;
+export { ApiKeysService };

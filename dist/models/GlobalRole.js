@@ -1,7 +1,2 @@
-var GlobalRole = /* @__PURE__ */ ((GlobalRole2) => {
-  GlobalRole2["SUPER_ADMIN"] = "SuperAdmin";
-  GlobalRole2["CUSTOMER"] = "Customer";
-  return GlobalRole2;
-})(GlobalRole || {});
-
-export { GlobalRole };
+export { GlobalRole } from '../chunk-TC24ERAQ.js';
+import '../chunk-37E2YH5C.js';
